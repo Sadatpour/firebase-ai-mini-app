@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Mini App</title>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-functions-compat.js"></script>
+  <link href="./output.css" rel="stylesheet"> <!-- Tailwind CSS output -->
+  <style>
+    button#login {
+      min-height: 55px;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4 font-sans antialiased">
+  <div class="w-full max-w-md bg-white rounded-lg shadow-xl p-8 border border-gray-200">
+    <h1 class="text-3xl font-extrabold text-center text-gray-900 mb-8">AI Mini App</h1>
+    
+    <div class="flex flex-col space-y-4 mb-8">
+      <button id="login" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 shadow-sm">
+        <span>Login with Google</span>
+      </button>
+      <button id="logout" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-red-600 text-white hover:bg-red-700 shadow-sm hidden">Logout</button>
+    </div>
+
+    <div id="chatUI" class="hidden">
+      <div id="messages" class="h-64 overflow-y-auto border border-gray-300 rounded-md p-4 mb-4 bg-gray-50 text-gray-800 text-sm leading-relaxed"></div>
+      
+      <div class="flex space-x-3">
+        <textarea id="messageInput" placeholder="Type your message..." class="flex-grow min-h-[40px] border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 resize-none"></textarea>
+        <button id="sendMessage" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-green-600 text-white hover:bg-green-700 shadow-sm">
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
