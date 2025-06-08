@@ -3,9 +3,10 @@ const cors = require("cors");
 
 const corsHandler = cors({
   origin: [
-    "http://localhost:5000",
+   "http://localhost:5000",
     "https://fir-ai-mini-app.web.app",
-    "https://fir-ai-mini-app.firebaseapp.com"
+    "https://fir-ai-mini-app.firebaseapp.com",
+    "https://ai-mini-app-ten.vercel.app"
   ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
